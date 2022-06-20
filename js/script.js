@@ -1,7 +1,10 @@
 import Motion from './motion.js?v=1'
 import AudioPlayer from './audioplayer.js'
 import { degToRpm, map } from './util.js'
+import unmuteAudio from './unmute.js'
 
+// Bypass mute hardware switch
+unmuteAudio(true)
 
 // Motion
 
