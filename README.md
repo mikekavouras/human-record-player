@@ -1,4 +1,4 @@
-# Human-Record-Player
+# Human Record Player
 Basic controls for [https://humanrecordplayer.com](https://humanrecordplayer.com)
 
 <img src="https://user-images.githubusercontent.com/627794/174522134-c2590c91-1e3c-49a3-b096-6281874a0035.PNG" width="240">
