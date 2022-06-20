@@ -1,0 +1,31 @@
+body, html {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+button {
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 18px;
+}
+
+h4 { font-size: 22px }
+
+/* size */
+.full-screen {
+  width: 100vw;
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+}
+
+/* display */
+.d-flex { display: flex; }
+.d-align-center { align-items: center; }
+.d-justify-center { justify-content: center; }
+
+/* box */
+.mb-1 { margin-bottom: 6px; }
+.mb-2 { margin-bottom: 12px; }
+

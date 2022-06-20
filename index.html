@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="full-screen">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Human Record Player</title>
+    <meta name="title" content="Human Record Player">
+    <meta name="description" content="Play music with your body">
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body class="full-screen">
+    <div class="d-flex d-align-center d-justify-center full-screen js-permissions-screen">
+      <button class="js-motion-permissions">Request location permissions</button>
+    </div>
+
+    <template id="get-started-screen">
+      <div class="d-flex d-align-center d-justify-center full-screen js-get-started-screen">
+        <button class="js-get-started-button">Get started</button>
+      </div>
+    </template>
+
+    <template id="loading-audio-screen">
+      <div class="d-flex d-align-center d-justify-center full-screen js-loading-audio-screen">
+        <p>Loading audio...</p>
+      </div>
+    </template>
+
+    <template id="main-screen">
+      <div class="d-flex d-align-center d-justify-center full-screen">
+        <div>
+          <h4 class="mb-2">Current time: <span class="js-current-time">00:00</span></h4>
+          <p class="mb-1">Playback rate: <span class="js-playback-rate">1.0</span></p>
+          <p>RPM: <span class="js-rotation-rate">0 deg/s (0 RPM)</span></p>
+        </div>
+      </div>
+    </template>
+
+    <script src="js/script.js" type="module"></script>
+  </body>
+</html>
