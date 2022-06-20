@@ -1,7 +1,9 @@
 # Human Record Player
 This repo demonstrates the basic controls for [https://humanrecordplayer.com](https://humanrecordplayer.com).
 
-<img src="https://user-images.githubusercontent.com/627794/174522134-c2590c91-1e3c-49a3-b096-6281874a0035.PNG" width="240">
+
+https://user-images.githubusercontent.com/627794/174651558-3efe065c-1d2a-49e8-919f-d0a784f27bf9.MP4
+
 
 ## Development
 
