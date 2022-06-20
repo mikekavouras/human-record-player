@@ -49,8 +49,6 @@ export default class Motion {
       const sum = this.values.reduce((a, b) => { return a + b }, 0)
       const avg = sum / this.values.length // smoothed
 
-      console.log(avg)
-
       if (this.onMotionUpdateHandler) {
         this.onMotionUpdateHandler(avg)
       }
