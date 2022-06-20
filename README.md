@@ -11,6 +11,22 @@ Safari requires `https` to request device motion/orientation events.
 2. Use [ngrok](https://ngrok.com) to explose the local server (e.g., `ngrok http 8000`)
 3. Point your mobile browser at the ngrok-generated URL
 
+## Audio assets
+
+For full mobile browser support you'll want to provide both `.mp3` and `.ogg`. To get any audio from the internet...
+
+1. Use [youtube-dl](http://ytdl-org.github.io/youtube-dl/download.html) to download a YouTube video.
+2. Use [ffmpeg](https://www.google.com/search?client=safari&rls=en&q=ffmpeg&ie=UTF-8&oe=UTF-8) to isolate the audio
+3. Use [ffmpeg](https://www.google.com/search?client=safari&rls=en&q=ffmpeg&ie=UTF-8&oe=UTF-8) to convert audio to `.mp3` and `.ogg`
+4. Spin
+
+```bash
+youtube-dl <URL>
+ffmpeg -i video.mkv -vn -acodec copy audio.aac
+ffmpeg -i audio.aac audio.mp3
+ffmpeg -i audio.aac audio.ogg
+```
+
 **Caveats**
 
 * Safari desktop does not support [DeviceMotion](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicemotion_event) events
