@@ -38,7 +38,7 @@ export default class AudioPlayer {
         if (buffer.length === 0) { throw 'Error decoding audio: 0 length buffer' }
 
         this.buff.fwd = buffer
-        this.buff.bck = AudioPlayer.reverseBuffer(buffer)
+        this.buff.bck = AudioPlayer.reversedBuffer(buffer)
 
         this.time.total = buffer.duration
 
@@ -167,7 +167,7 @@ export default class AudioPlayer {
     this.src = src
   }
 
-  static reverseBuffer(buffer) {
+  static reversedBuffer(buffer) {
     let c0 = new Float32Array(buffer.length)
     let c1 = new Float32Array(buffer.length)
 
