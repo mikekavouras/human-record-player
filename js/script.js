@@ -6,15 +6,16 @@ import unmuteAudio from './unmute.js'
 // Bypass mute hardware switch
 unmuteAudio(true)
 
+
 // Motion
+
+// groove is the 'sweet spot' where we snap to 100%
+// playback rate. min/max are in deg/sec. The wider the
+// groove, the easier it is to play at 100% speed.
+const groove = { min: 60, max: 80 }
 
 const motion = new Motion(window, {
   update(val) {
-
-    // groove is the 'sweet spot' where we snap to 100%
-    // playback rate. min/max are in deg/sec. The wider the
-    // groove, the easier it is to play at 100% speed.
-    const groove = { min: 60, max: 80 }
     const absVal = Math.abs(val)
 
     let rate = 1.0
@@ -84,10 +85,10 @@ const showGetStartedScreen = () => {
   const getStartedButton = document.querySelector('.js-get-started-button')
   getStartedButton.addEventListener('click', () => {
     getStartedScreen.remove()
+    showMainUI()
 
     motion.startUpdatingMotion()
     audioPlayer.play()
-    showMainUI()
   })
 }
 
