@@ -23,7 +23,7 @@ For full mobile browser support you'll want to provide both `.mp3` and `.ogg`. T
 4. Spin
 
 ```bash
-youtube-dl <URL>
+youtube-dl <URL> -o video
 ffmpeg -i video.mkv -vn -acodec copy audio.aac
 ffmpeg -i audio.aac audio.mp3
 ffmpeg -i audio.aac audio.ogg
