@@ -1,4 +1,4 @@
-# Human Record Player
+# Human Record Player 🤳
 This repo demonstrates the basic controls for [https://humanrecordplayer.com](https://humanrecordplayer.com).
 
 
