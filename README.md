@@ -1,4 +1,6 @@
 # Human Record Player
+[Leer en español](README_ES.md)
+
 This repo demonstrates the basic controls for [https://humanrecordplayer.com](https://humanrecordplayer.com).
 
 
