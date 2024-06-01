@@ -36,3 +36,66 @@ ffmpeg -i audio.aac audio.ogg
 
 ## Credits
 Shoutout to [@feross](https://github.com/sponsors/feross) for [https://github.com/feross/unmute-ios-audio](https://github.com/feross/unmute-ios-audio), and [@searls](https://github.com/searls) for the [iOS 14.5+ patch](https://github.com/searls/unmute-ios-audio/commit/8fc05cdb0d0f63167e0d6047ed1932555b3c9491)
+
+## Code Samples
+
+In this section, we showcase some specific code snippets from the project to give you a taste of how it works.
+
+### Initialization of the Motion Class
+
+Here's how the `Motion` class is initialized in `js/script.js`:
+
+```javascript
+const motion = new Motion(window, {
+  update(val) {
+    const absVal = Math.abs(val)
+
+    let rate = 1.0
+    if (absVal > groove.min && absVal < groove.max) {
+      rate = 1.0
+    } else if (absVal < groove.min) {
+      rate = map(absVal, 0, groove.min, 0, 0.99)
+    } else {
+      rate = map(absVal, groove.max, 250, 1.01, 2.0)
+    }
+
+    audioPlayer.updatePlaybackRate(rate, val < 0)
+
+    // Update debug UI
+    const rpm = degToRpm(absVal).toFixed(0)
+    playbackRateOutput.textContent = rate.toFixed(2)
+    rotationRateOutput.textContent = `${val.toFixed(0)} deg/s (${rpm} RPM)`
+  }
+})
+```
+
+Why do programmers prefer dark mode? Because light attracts bugs!
+
+### The onMotionUpdate Method
+
+And here's the `onMotionUpdate` method from `js/motion.js`:
+
+```javascript
+onMotionUpdate(e) {
+  let now = new Date()
+
+  if ((now - this.lastReadAt) > Motion.MotionReadInterval) {
+    this.lastReadAt = now
+
+    const { beta, gamma } = e.rotationRate
+    const isHorizontal = this.deviceOrientation === Motion.DeviceOrientation.Horizontal
+    let value = (isHorizontal ? gamma : beta) * -1
+
+    this.addValue(value)
+
+    const sum = this.values.reduce((a, b) => { return a + b }, 0)
+    const avg = sum / this.values.length // smoothed
+
+    if (this.onMotionUpdateHandler) {
+      this.onMotionUpdateHandler(avg)
+    }
+  }
+}
+```
+
+Why was the JavaScript developer sad? Because he didn't know how to un-`null` his feelings.
